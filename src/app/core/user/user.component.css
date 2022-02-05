@@ -1,0 +1,13 @@
+
+.photo-counter{
+    height: 12.5vh;
+    color: #000;
+}
+.album-id{
+    height: 20vh;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(224, 108, 79);
+}
+
+

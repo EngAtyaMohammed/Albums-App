@@ -1,0 +1,86 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="text-end">
+                <button type="button" class="btn-close m-1 " data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class=" text-center">
+                <span class="text-center text-danger fw-bold " id="exampleModalLabel">User information</span>
+            </div>
+            <hr>
+            <form class=" g-3" (ngSubmit)="onSubmit()" [formGroup]="form">
+                <div class="modal-body">
+                    <div class="d-flex justify-content-between">
+                        <div class="d-flex flex-column bd-highlight">
+                            <label for="inputEmail4" class="form-label">Name</label>
+                            <input type="name" class="form-control" #name formControlName="name" id="inputEmail4">
+                            <div *ngIf="control.name.invalid && (control.name.dirty || control.name.touched)"
+                                class="alert">
+                                <div *ngIf="control.name.errors?.required ">
+                                    Name is required.
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="d-flex flex-column bd-highlight">
+                            <label for="inputemail" class="form-label">Email</label>
+                            <input type="email" class="form-control" formControlName="email" id="inputemail">
+                            <div *ngIf="control.email.invalid && (control.email.dirty || control.email.touched)"
+                                class="alert" >
+                                <div *ngIf="control.email.errors?.required ">
+                                    email is required.
+                                </div>
+                                <div *ngIf="control.email.errors?.email ">
+                                    plz put a valid email 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column bd-highlight">
+                        <label for="phone" class="form-label">phone</label>
+                        <input type="phone" class="form-control" formControlName="phone" id="phone">
+
+                        <div *ngIf="control.phone.invalid && (control.phone.dirty || control.phone.touched)"
+                            class="alert">
+                            <div *ngIf="control.phone.errors?.required ">
+                                the Phone Number is required.
+                            </div>
+                            <div *ngIf="control.phone.errors?.pattern ">
+                                plz put a valid phone number 
+                            </div>
+                        </div>
+
+                    </div>
+                    <label>Address</label>
+                    <div formGroupName="address" class=" d-flex justify-content-between">
+                        <div class="col-md-3">
+                            <select class="form-select" aria-placeholder="city" formControlName="city">
+                                <option selected>city</option>
+                                <option>cairo</option>
+                            </select>
+
+                            
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" placeholder="street" formControlName="street"
+                                id="inputStreet">
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" formControlName="suite" id="inputSuite">
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Sign Up</button>
+                    <!-- [disabled]="form.invalid" -->
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+
+
+  
+  
+  .alert div {
+    color: red;
+  }
+  .alert{
+    margin-bottom: 0;
+    padding: 0px;
+  }
+  
+
+
+  input.ng-invalid.ng-touched {
+    border: 1.5px solid red;
+  }
+  
+  /* change border color to green when invalid */
+  
+  input.ng-valid.ng-touched {
+    border: 1.5px solid green;
+  }

@@ -1,0 +1,24 @@
+<app-userinfo *ngIf="user" [user]="user"></app-userinfo>
+
+<div class=" container">
+  <div class="row mt-3">
+    <h3 class="text-center text-danger fw-bold" *ngIf="user">{{user.name}}'s Albums</h3>
+  </div>
+  <hr>
+  <div class=" row" >
+    
+    <div class=" col-4 mt-4" *ngFor="let album of albums;">
+      <div routerLink="/user/{{user.id}}/album/{{ album.id }}" class=" p-5 bg-danger text-center  fs-2 fw-bolder text-white">
+        {{album.title}}
+      </div>
+      <div routerLink="/user/{{user.id}}/album/{{ album.id }}" class="shadow ">
+        <div  class=" text-center p-2 fw-bolder ">
+          <p class="text-dark mb-auto fs-4">{{counting_of_photos(album)}}</p>
+          <p class="text-black-50 " >Photos</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
